@@ -1,6 +1,6 @@
 import "./Header.css"
 import logo from "../../images/logo.png"
-import AppContext from "../../AppContext/AppContext"
+import AppContext from "../../contexts/AppContext"
 import { useContext, useState } from "react"
 import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
@@ -56,7 +56,7 @@ function Header() {
                             <Link to="/profile" className="login">Profile</Link>
                             :
                             // {/* only when user is not logged in */}
-                            <Link to="/auth" className="login">Login</Link>
+                            <Link to="/login" className="login">Login</Link>
                     }
 
                     <div className="mobile-nav">

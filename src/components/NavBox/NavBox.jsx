@@ -5,7 +5,7 @@ function NavBox() {
     return (
         <div className="nav-boxes">
             <NavBoxItem imgSrc={complaint} title="Register Your Complaint Here" href="/register-complaint" />
-            <NavBoxItem imgSrc={google_map_logo} title="Find Nearest Dustbins,Garbage Trucks and Offices" />
+            <NavBoxItem imgSrc={google_map_logo} title="Find Nearest Dustbins,Garbage Trucks and Offices" href="/map" />
         </div>
     )
 }
