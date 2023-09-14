@@ -6,6 +6,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import { IconButton } from "@mui/material";
+import { Link } from "react-router-dom";
 function Header() {
     const { isLoggedIn, accountType } = useContext(AppContext)
 
@@ -34,17 +35,17 @@ function Header() {
             <div className="header">
                 <img src={logo} alt="DWM" className="logo" />
                 <div className="nav">
-                    <a href="/">Home</a>
+                    <Link to="/">Home</Link>
                     {
                         accountType === "official" &&
                         (
-                            // {/* Only office accessible, its a menu consist of different installation methods */}
+                            // {/* Only office accessible, its Link menu consist of different installation methods */}
                             <button className="nav-item" onClick={openOfficeMenu}>Office</button>
                             // consist of view complaints,install dustbin,garbage truck connection,add BBMP office, appoint worker
                         )
                     }
-                    <a href="/contact">Contact US</a>
-                    <a href="/about">About US</a>
+                    <Link to="/contact">Contact US</Link>
+                    <Link to="/about">About US</Link>
 
 
                 </div>
@@ -52,10 +53,10 @@ function Header() {
                     {
                         isLoggedIn ?
                             // {/* Only for users who logged in */}
-                            <a href="/profile" className="login">Profile</a>
+                            <Link to="/profile" className="login">Profile</Link>
                             :
                             // {/* only when user is not logged in */}
-                            <a href="/auth" className="login">Login</a>
+                            <Link to="/auth" className="login">Login</Link>
                     }
 
                     <div className="mobile-nav">
@@ -74,12 +75,11 @@ function Header() {
                     open={isOfficeMenuOpen}
                     onClose={closeOfficeMenu}
                 >
-                    <MenuItem>View Compliants</MenuItem>
-                    <MenuItem>Install Dustbin</MenuItem>
-                    <MenuItem>Connect Garbage truck</MenuItem>
-                    <MenuItem>Add BBMP Office</MenuItem>
-                    <MenuItem>Appoint Worker</MenuItem>
-
+                    <MenuItem><Link to="/dashboard">View Compliants</Link></MenuItem>
+                    <MenuItem><Link to="/install-dustbin">Install Dustbin</Link></MenuItem>
+                    <MenuItem><Link to="/connect-grabage-truck">Connect Garbage truck</Link></MenuItem>
+                    <MenuItem><Link to="/add-bbmp-office">Add BBMP Office</Link></MenuItem>
+                    <MenuItem><Link to="/appoint-worker">Appoint Worker</Link></MenuItem>
                 </Menu>
             </div>
 
@@ -90,13 +90,13 @@ function Header() {
                     open={isMobileMenuOpen}
                     onClose={closeMobileMenu}
                 >
-                    <MenuItem><a href="/">Home</a></MenuItem>
-                    <MenuItem><a href="/contact">Contact US</a></MenuItem>
-                    <MenuItem> <a href="/about">About US</a></MenuItem>
+                    <MenuItem><Link to="/">Home</Link></MenuItem>
+                    <MenuItem><Link to="/contact">Contact US</Link></MenuItem>
+                    <MenuItem> <Link to="/about">About US</Link></MenuItem>
                     {
                         accountType === "official" &&
                         (
-                            // {/* Only office accessible, its a menu consist of different installation methods */}
+                            // {/* Only office accessible, its Link menu consist of different installation methods */}
                             <MenuItem><button className="nav-item" onClick={openOfficeMenu}>Office</button></MenuItem>
                             // consist of view complaints,install dustbin,garbage truck connection,add BBMP office, appoint worker
                         )

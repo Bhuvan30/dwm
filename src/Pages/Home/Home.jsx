@@ -34,7 +34,6 @@ function Home() {
             <div className="tracker-container">
             <TrackerBox  Icon={DeleteIcon} title="Dustbin" record={27} />
             <TrackerBox  Icon={LocalShippingIcon} title="Garbage Truck" record={58} />
-            <TrackerBox  Icon={PeopleIcon} title="Workers" record={1034} />
             </div>
 
             <Footer />

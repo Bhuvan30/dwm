@@ -1,11 +1,12 @@
 import "./NavBox.css"
+import {Link} from "react-router-dom"
 
-function NavBoxItem({imgSrc,title}) {
+function NavBoxItem({imgSrc,title,href}) {
   return (
-    <a className="nav-box-item">
+    <Link className="nav-box-item" to={href} >
         <img src={imgSrc} alt="" />
         <div className="title">{title}</div>
-    </a>
+    </Link>
   )
 }
 
