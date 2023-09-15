@@ -1,4 +1,4 @@
-import styles from "./OfficeItem.module.css";
+import "./OfficeItem.css";
 import { Link } from "react-router-dom";
 
 import { useIcons } from "../../contexts/IconsContext";
@@ -17,14 +17,14 @@ function OfficeItem({ icon }) {
   return (
     <li>
       <Link
-        className={`${styles.officeItem} ${
-          id === currentIcon.id ? styles["officeItem--active"] : ""
+        className={`${"officeItem"} ${
+          id === currentIcon.id ? "officeItem--active" : ""
         }`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
-        <span className={styles.emoji}>{emoji}</span>
-        <span className={styles.name}>{iconName}</span>
-        <span className={styles.date}>{area}</span>
+        <span className="emoji">{emoji}</span>
+        <span className="name">{iconName}</span>
+        <span className="date">{area}</span>
       </Link>
     </li>
   );

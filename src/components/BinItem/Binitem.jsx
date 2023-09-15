@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import styles from "./Binitem.module.css";
+import "./Binitem.css";
 import { useIcons } from "../../contexts/IconsContext";
 
 const formatDate = (date) =>
@@ -16,14 +16,14 @@ function Binitem({ icon }) {
   return (
     <li>
       <Link
-        className={`${styles.binItem} ${
-          id === currentIcon.id ? styles["binItem--active"] : ""
+        className={`${"binItem"} ${
+          id === currentIcon.id ? "binItem--active" : ""
         }`}
         to={`${id}?lat=${position.lat}&lng=${position.lng}`}
       >
-        <span className={styles.emoji}>{emoji}</span>
-        <span className={styles.name}>{iconName}</span>
-        <span className={styles.date}>{area}</span>
+        <span className="emoji">{emoji}</span>
+        <span className="name">{iconName}</span>
+        <span className="date">{area}</span>
       </Link>
     </li>
   );

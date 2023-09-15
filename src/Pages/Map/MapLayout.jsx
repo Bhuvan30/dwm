@@ -1,5 +1,5 @@
 import Sidebar from "../../components/Sidebar/Sidebar";
-import  "./MapLayout.css";
+import "./MapLayout.css";
 import Map from "../../components/Map/Map";
 import { useGeolocation } from "../../hooks/useGeolocation";
 import { useIcons } from "../../contexts/IconsContext";
@@ -15,7 +15,9 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
   const dLat = lat2Rad - lat1Rad;
   const dLon = lon2Rad - lon1Rad;
 
-  const a =Math.sin(dLat / 2) ** 2 + Math.cos(lat1Rad) * Math.cos(lat2Rad) * Math.sin(dLon / 2) ** 2;
+  const a =
+    Math.sin(dLat / 2) ** 2 +
+    Math.cos(lat1Rad) * Math.cos(lat2Rad) * Math.sin(dLon / 2) ** 2;
   const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
   const distance = R * c; // Distance in kilometers
@@ -27,6 +29,7 @@ function calculateDistance(lat1, lon1, lat2, lon2) {
 }
 
 function MapLayout() {
+  console.log("hello");
   //deprecated
   const { icons, isLoading } = useIcons();
 
@@ -40,12 +43,12 @@ function MapLayout() {
     getPosition();
   }, []);
 
-  // useEffect(
-  //   function () {
-  //     return;
-  //   },
-  //   [icons]
-  // );
+  useEffect(
+    function () {
+      return;
+    },
+    [icons]
+  );
 
   let distance = null;
 
@@ -60,6 +63,8 @@ function MapLayout() {
       icon.distance = distance;
     });
   }
+
+  console.log(icons);
 
   return (
     <div>

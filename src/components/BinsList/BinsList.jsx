@@ -1,5 +1,5 @@
 import Binitem from "../BinItem/Binitem";
-import styles from "./BinsList.module.css";
+import "./BinsList.css";
 import Spinner from "../Spinner/Spinner";
 import Message from "../Message/Message";
 import { useIcons } from "../../contexts/IconsContext";
@@ -13,7 +13,7 @@ function BinsList() {
   if (!icons.length) return <Message message="hello" />;
 
   return (
-    <ul className={styles.binsList}>
+    <ul className="binsList">
       {icons.map((icon) => {
         if (icon.icon === "trashIcon")
           return <Binitem icon={icon} key={icon.id} />;

@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import styles from "./Map.module.css";
+import "./Map.css";
 import { MapContainer, TileLayer, Marker, Popup, useMap } from "react-leaflet";
 import { useEffect, useState } from "react";
 import { useIcons } from "../../contexts/IconsContext";
@@ -9,6 +9,11 @@ import L from "leaflet"; // Make sure to import the 'leaflet' library
 import trashIcon from "../../images/trash.png";
 import officeIcon from "../../images/office.png";
 import currentLocIcon from "../../images/currentLoc.png";
+// import "react-leaflet/react-leaflet.css";
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/react-leaflet@3.2.2/dist/react-leaflet.css"
+/>;
 
 function GetIcon(Mapicon) {
   return L.icon({
@@ -53,7 +58,7 @@ function Map() {
   );
 
   return (
-    <div className={styles.mapContainer}>
+    <div className="mapContainer00">
       <Button type="position" onClick={getPosition}>
         {isLoadingPosition ? "Loading..." : "Use your position"}
       </Button>
@@ -61,7 +66,7 @@ function Map() {
         center={mapPosition}
         zoom={15}
         scrollWheelZoom={true}
-        className={styles.map}
+        className="map00"
       >
         <TileLayer
           url="http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}"

@@ -1,10 +1,10 @@
 import { useParams } from "react-router-dom";
-import styles from "./City.module.css";
+import "./City.css";
 import { useIcons } from "../../contexts/IconsContext";
 import { useEffect, useState } from "react";
 import Spinner from "../Spinner/Spinner";
 import BackButton from "../Button/BackButton";
-console;
+
 const formatDate = (date) =>
   new Intl.DateTimeFormat("en", {
     day: "numeric",
@@ -17,6 +17,22 @@ function City() {
   const { id } = useParams();
   const { getIcon, currentIcon, isLoading, icons } = useIcons();
   const { iconName, emoji, area, notes, distance, condition } = currentIcon;
+
+  console.log(distance);
+
+  const [shouldRender, setShouldRender] = useState(true);
+
+  // Function to toggle the condition
+  const toggleRender = () => {
+    if (distance === null) setShouldRender(!shouldRender);
+  };
+
+  useEffect(() => {
+    // This effect runs whenever shouldRender changes
+    // You can place any additional logic here
+  }, [shouldRender]);
+
+  toggleRender();
 
   useEffect(
     function () {
@@ -34,27 +50,27 @@ function City() {
   });
 
   return (
-    <div className={styles.city}>
-      <div className={styles.row}>
+    <div className="city">
+      <div className="row">
         <h6>name</h6>
         <h3>
           <span>{emoji}</span> {iconName}
         </h3>
       </div>
 
-      <div className={styles.row}>
+      <div className="row">
         <h6>
           {"area"} : {id}{" "}
         </h6>
         <p>{area}</p>
       </div>
 
-      <div className={styles.row}>
+      <div className="row">
         <h6>Approximate distance from your Location</h6>
         <p>{distance} km</p>
       </div>
       {condition !== null ? (
-        <div className={styles.row}>
+        <div className="row">
           <h6>Condition</h6>
           <p>{condition}</p>
         </div>
@@ -63,7 +79,7 @@ function City() {
       )}
 
       {notes && (
-        <div className={styles.row}>
+        <div className="row">
           <h6>Your notes</h6>
           <p>{notes}</p>
         </div>

@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import styles from "./Sidebar.module.css";
+import "./Sidebar.css";
 import MapNav from "../MapNav/MapNav";
 
 function Sidebar() {
   return (
-    <div className={styles.sidebar}>
+    <div className="sidebar">
       <MapNav />
       <Outlet />
     </div>

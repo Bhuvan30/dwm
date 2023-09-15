@@ -1,4 +1,4 @@
-import styles from "./OfficesList.module.css";
+import "./OfficesList.css";
 import Spinner from "../Spinner/Spinner";
 import Message from "../Message/Message";
 import OfficeItem from "../OfficeItem/OfficeItem";
@@ -19,7 +19,7 @@ function OfficesList() {
   // }, []);
 
   return (
-    <ul className={styles.officeList}>
+    <ul className="officeList">
       {icons.map((icon) => {
         if (icon.icon === "officeIcon")
           return <OfficeItem icon={icon} key={icon.id} />;

@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
-import styles from "./MapNav.module.css";
+import "./MapNav.css";
 
 function MapNav() {
   return (
-    <nav className={styles.nav}>
+    <nav className="nav">
       <ul>
         <li>
           <NavLink to="bins">Bins</NavLink>

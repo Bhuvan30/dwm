@@ -94,7 +94,7 @@ function IconsProvider({ children }) {
 function useIcons() {
   const context = useContext(IconsContext);
   if (context === undefined)
-    throw new Error("BinsContext was used outside the BinsProvider");
+    throw new Error("IconsContext was used outside the IconsProvider");
   return context;
 }
 

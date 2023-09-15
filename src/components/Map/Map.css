@@ -1,11 +1,11 @@
-.mapContainer {
+.mapContainer00 {
   flex: 1;
   height: 100%;
   background-color: var(--color-dark--2);
   position: relative;
 }
 
-.map {
+.map00 {
   height: 100%;
 }
 
